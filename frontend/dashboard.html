@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Noty</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-page">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div>
+          <p class="eyebrow">Notas</p>
+          <h1>Noty</h1>
+        </div>
+        <button id="logoutButton" class="icon-button" type="button" title="Cerrar sesión" aria-label="Cerrar sesión">Salir</button>
+      </div>
+
+      <button id="newNoteButton" class="button primary full-width" type="button">Nueva nota</button>
+      <input id="searchInput" class="search-input" type="search" placeholder="Buscar notas..." aria-label="Buscar notas">
+      <div id="notesList" class="notes-list" aria-label="Lista de notas"></div>
+    </aside>
+
+    <main class="editor-panel">
+      <div class="editor-topbar">
+        <input id="noteTitle" class="title-input" type="text" placeholder="Título de la nota">
+        <div class="editor-actions">
+          <button id="saveNoteButton" class="button primary" type="button">Guardar</button>
+          <button id="deleteNoteButton" class="button danger" type="button">Eliminar</button>
+          <button id="exportPdfButton" class="button secondary" type="button">Exportar PDF</button>
+        </div>
+      </div>
+
+      <div class="toolbar" aria-label="Barra de formato">
+        <button data-command="formatBlock" data-value="h1" type="button" aria-label="Formato de título H1">H1</button>
+        <button data-command="formatBlock" data-value="h2" type="button" aria-label="Formato de título H2">H2</button>
+        <button data-command="formatBlock" data-value="h3" type="button" aria-label="Formato de título H3">H3</button>
+        <button data-command="bold" type="button" aria-label="Negrita">B</button>
+        <button data-command="italic" type="button" aria-label="Cursiva">I</button>
+        <button data-command="underline" type="button" aria-label="Subrayado">U</button>
+        <button data-command="insertUnorderedList" type="button" aria-label="Lista con viñetas">• Viñetas</button>
+        <button data-command="insertOrderedList" type="button" aria-label="Lista numerada">1. Numerada</button>
+        <button data-command="formatBlock" data-value="p" type="button" aria-label="Formato de párrafo">Párrafo</button>
+      </div>
+
+      <section id="noteEditor" class="note-editor" contenteditable="true" aria-label="Editor de contenido">
+        <p>Escribe tu nota aquí...</p>
+      </section>
+
+      <p id="message" class="message" role="status">Cargando dashboard...</p>
+    </main>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>
